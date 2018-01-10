@@ -241,47 +241,62 @@ interface IziToastSettings {
 }
 
 export function show(settings: IziToastSettings): void;
-/**
- * Closes the specific toast.
- * @param settings Settings for this toast.
- * @param toast Toast element to hide.
- * @param closedBy Custom closed by info to use in other functions.
- */
 export function hide(settings: IziToastSettings, toast: HTMLDivElement, closedBy: string): void;
-/**
- * Shows an info toast.
- * @param settings Settings for this toast.
- */
 export function info(settings: IziToastSettings): void;
-/**
- * Shows an error toast.
- * @param settings Settings for this toast.
- */
 export function error(settings: IziToastSettings): void;
-/**
- * Shows a warning toast.
- * @param settings Settings for this toast.
- */
 export function warning(settings: IziToastSettings): void;
-/**
- * Shows a success toast.
- * @param settings Settings for this toast.
- */
 export function success(settings: IziToastSettings): void;
-/**
- * Shows a question toast.
- * @param settings Settings for this toast.
- */
 export function question(settings: IziToastSettings): void;
-/**
- * Destroys all toasts.
- */
 export function destroy(): void;
-/**
- * Sets default values.
- * @param settings Settings to set as default.
- */
 export function settings(settings: IziToastSettings): void;
+
+interface IziToast {
+  /**
+   * Opens the toast.
+   */
+  show(settings: IziToastSettings): void;
+  /**
+   * Closes the specific toast.
+   * @param settings Settings for this toast.
+   * @param toast Toast element to hide.
+   * @param closedBy Custom closed by info to use in other functions.
+   */
+  hide(settings: IziToastSettings, toast: HTMLDivElement, closedBy: string): void;
+  /**
+   * Shows an info toast.
+   * @param settings Settings for this toast.
+   */
+  info(settings: IziToastSettings): void;
+  /**
+   * Shows an error toast.
+   * @param settings Settings for this toast.
+   */
+  error(settings: IziToastSettings): void;
+  /**
+   * Shows a warning toast.
+   * @param settings Settings for this toast.
+   */
+  warning(settings: IziToastSettings): void;
+  /**
+   * Shows a success toast.
+   * @param settings Settings for this toast.
+   */
+  success(settings: IziToastSettings): void;
+  /**
+   * Shows a question toast.
+   * @param settings Settings for this toast.
+   */
+  question(settings: IziToastSettings): void;
+  /**
+   * Destroys all toasts.
+   */
+  destroy(): void;
+  /**
+   * Sets default values.
+   * @param settings Settings to set as default.
+   */
+  settings(settings: IziToastSettings): void;
+}
 
 export {
     IziToastPosition,
